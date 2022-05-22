@@ -1,0 +1,83 @@
+<ion-content>
+  <form [formGroup]="newAccountForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-card class="form-card">
+            <ion-card-header>
+              <ion-card-title>
+                <ion-label>
+                  <h1>Ingresa los datos de la cuenta de terceros</h1>
+                </ion-label>
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item lines="full">
+                <ion-label position="floating">Alias</ion-label>
+                <ion-input formControlName="name" type="text" required></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="isSubmitted && errorControl.name.errors?.required">
+                <span color="danger">
+                  El alias es requerido.
+                </span>
+              </ion-text>
+
+              <ion-item lines="full">
+                <ion-label position="floating">Entidad Bancaria</ion-label>
+                <ion-input formControlName="bank" type="text" required></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="isSubmitted && errorControl.bank.errors?.required">
+                <span color="danger">
+                  La entidad bancaria es requerida.
+                </span>
+              </ion-text>
+
+              <ion-item lines="full">
+                <ion-label position="floating">Tipo de cuenta</ion-label>
+                <ion-input formControlName="accountType" type="text" required></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="isSubmitted && errorControl.accountType.errors?.required">
+                <span color="danger">
+                  El tipo de cuenta es requerido.
+                </span>
+              </ion-text>
+
+              <ion-item lines="full">
+                <ion-label position="floating">Número de cuenta</ion-label>
+                <ion-input formControlName="accountNumber" type="text" maxlength="11" required></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="isSubmitted && errorControl.accountNumber.errors?.required">
+                <span color="danger">
+                  El número de cuenta es requerido.
+                </span>
+              </ion-text>
+
+              <ion-item lines="full">
+                <ion-label position="floating">Identificación del titular</ion-label>
+                <ion-input formControlName="accountOwner" type="text" maxlength="12" required></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="isSubmitted && errorControl.accountOwner.errors?.required">
+                <span color="danger">
+                  La identificación del titular es requerida.
+                </span>
+              </ion-text>
+
+              <ion-item lines="full">
+                <ion-label position="floating">Moneda</ion-label>
+                <ion-input formControlName="currency" type="text" required></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="isSubmitted && errorControl.currency.errors?.required">
+                <span color="danger">
+                  La moneda es requerida.
+                </span>
+              </ion-text>
+
+            </ion-card-content>
+            <ion-button expand="block" type="submit">Ingresar</ion-button>
+            <ion-button fill="outline" expand="block" type="button" (click)="dismissModal()">Cancelar</ion-button>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

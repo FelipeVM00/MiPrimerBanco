@@ -1,0 +1,60 @@
+{
+    "transactions": [
+        {
+            "id": "1",
+            "date": "2022-01-01",
+            "description": "Netflix",
+            "amount": "40000",
+            "type": "outcome",
+            "accountNumber": "554-65173-647"
+        },
+        {
+            "id": "2",
+            "date": "2022-01-02",
+            "description": "Amazon",
+            "amount": "30000",
+            "type": "outcome",
+            "accountNumber": "554-65173-647"
+        },
+        {
+            "id": "3",
+            "date": "2022-01-03",
+            "description": "Nequi",
+            "amount": "100000",
+            "type": "income",
+            "accountNumber": "554-65173-647"
+        },
+        {
+            "id": "4",
+            "date": "2022-01-04",
+            "description": "Nequi",
+            "amount": "40000",
+            "type": "income",
+            "accountNumber": "554-65173-647"
+        },
+        {
+            "id": "5",
+            "date": "2022-01-05",
+            "description": "Nequi",
+            "amount": "40000",
+            "type": "income",
+            "accountNumber": "554-65173-647"
+        },
+        {
+            "id": "6",
+            "date": "2022-01-06",
+            "description": "Rappi",
+            "amount": "40000",
+            "type": "outcome",
+            "accountNumber": "554-65173-647"
+        },
+        {
+            "id": "7",
+            "date": "2022-01-07",
+            "description": "PayPal",
+            "amount": "40000",
+            "type": "income",
+            "accountNumber": "554-65173-647"
+        }
+    ]
+}

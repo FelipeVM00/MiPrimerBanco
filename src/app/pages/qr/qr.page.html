@@ -1,0 +1,18 @@
+<ion-content>
+  <ion-header class="header ion-padding ion-no-border">
+    <ion-toolbar>
+      <h1><strong>Código QR</strong></h1>
+    </ion-toolbar>
+  </ion-header>
+  <ion-text class="ion-text-center">
+    <p>Realiza transferencias usando un código QR</p>
+  </ion-text>
+
+  <ion-button class="ion-margin" color="secondary" (click)="generateBarCode()" expand="block" size="large">
+    Generar código QR
+  </ion-button>
+
+  <ion-button class="ion-margin" color="primary" (click)="scanBRcode()" expand="block" size="large">
+    Leer código QR
+  </ion-button>
+</ion-content>

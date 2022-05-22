@@ -1,0 +1,37 @@
+<ion-content>
+  <ion-header class="header ion-padding ion-no-border">
+    <ion-toolbar>
+      <h1><strong>Tus cuentas</strong></h1>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngFor="let account of accounts" (click)="selectAccount(account)">
+    <app-account-card [account]="account" [selected]="accountSelected"></app-account-card>
+  </div>
+
+  <ion-text class="ion-text-center" *ngIf="!accountSelected">
+    <p>Elige una para ver sus movimientos</p>
+  </ion-text>
+
+  <div *ngIf="accountSelected">
+    <ion-toolbar>
+      <ion-title size="medium">Movimientos</ion-title>
+    </ion-toolbar>
+    <ion-text class="ion-text-center" *ngIf="transactions && transactions.length === 0">
+      <p>No hay movimientos</p>
+    </ion-text>
+    <ion-list>
+      <ion-item *ngFor="let transaction of transactions">
+        <ion-label>
+          <h2><strong>{{transaction.description}}</strong></h2>
+          <p>{{transaction.date | date}}</p>
+        </ion-label>
+        <ion-label slot="end" [ngStyle]="{'color': transaction.type == 'income' ? '#77dd77 ' : '#ff6961' }">
+          <h2><strong>{{transaction.amount | currency:'COP':'symbol':'3.0'}}</strong></h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+
+</ion-content>

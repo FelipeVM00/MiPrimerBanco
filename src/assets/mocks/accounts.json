@@ -1,0 +1,18 @@
+{
+    "accounts": [
+        {
+            "id": "1",
+            "owner": "felipe",
+            "number": "554-65173-647",
+            "type": "savings",
+            "balance": "1750000"
+        },
+        {
+            "id": "2",
+            "owner": "felipe",
+            "number": "6545-5668-564",
+            "type": "chekings",
+            "balance": "200000"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+<ion-content>
+  <ion-header class="header ion-padding ion-no-border">
+    <ion-toolbar>
+      <h1><strong>Transferencias</strong></h1>
+    </ion-toolbar>
+  </ion-header>
+  <div>
+    <ion-text class="ion-text-center" *ngIf="!accounts || accounts.length === 0">
+      <p>No tienes cuentas inscritas</p>
+    </ion-text>
+    <ion-text class="ion-text-center" *ngIf="accounts && accounts.length > 0">
+      <p>Elige la cuenta a transferir</p>
+    </ion-text>
+    <ion-list>
+      <ion-item *ngFor="let account of accounts" (click)="selectAccount(account)">
+        <ion-label>
+          <h2><strong>{{account.accountNumber}}</strong></h2>
+          <p>{{account.bank}}</p>
+        </ion-label>
+        <ion-label slot="end">
+          <h2><strong>{{account.name}}</strong></h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button class="ion-margin-top" fill="outline" expand="block" type="button" (click)="dismissModal()">Cancelar
+    </ion-button>
+  </div>
+
+
+</ion-content>

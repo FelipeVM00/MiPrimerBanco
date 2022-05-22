@@ -1,0 +1,44 @@
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-card class="login-card">
+            <ion-card-header>
+              <ion-card-title>
+                <ion-label>
+                  <h1>Ingresa a tu cuenta Mi Primer Banco</h1>
+                </ion-label>
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item lines="full">
+                <ion-label position="floating">Usuario</ion-label>
+                <ion-input formControlName="user" type="text" required></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="isSubmitted && errorControl.user.errors?.required">
+                <span color="danger">
+                  El usuario es requerido.
+                </span>
+              </ion-text>
+
+              <ion-item lines="full">
+                <ion-label position="floating">Clave</ion-label>
+                <ion-input formControlName="password" type="password" required></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="isSubmitted && errorControl.password.errors?.required">
+                <span color="danger">
+                  La clave es requerida.
+                </span>
+              </ion-text>
+
+            </ion-card-content>
+            <ion-button expand="block" type="submit">Ingresar</ion-button>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+</ion-content>
